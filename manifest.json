@@ -6,11 +6,11 @@
             "src": "images/aroid-icon192x192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "maskable"
         }
     ],
     "start_url": "/",
-    "background_color": "#f3c9c8",
-    "Theme_color": "#f3c9c8",
+    "background_color": "#F8E3E2",
+    "Theme_color": "#F8E3E2",
     "display": "standalone"
 }
