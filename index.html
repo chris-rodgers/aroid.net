@@ -15,11 +15,18 @@
   <div class="container">
     <header class="header">
       <a href="/"><img src="images/logo.svg" class="header__logo" /></a>
-      <button class="header__button" ><img src="images/cart.svg" /></button>
+      <button class="header__button" id="cart-button"><img src="images/cart.svg" /></button>
     </header>
   </div>
+  <button id="increment">+</button>
 </body>
 <script>
+  document.getElementById('increment').onclick = function () {
+    var el = document.getElementById('cart-button');
+    var count = el.getAttribute('data-count') || 0;
+    el.setAttribute('data-count', Number(count)+1);
+  }
+
   if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
     navigator.serviceWorker.register('service-worker.js')
