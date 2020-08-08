@@ -3,12 +3,12 @@
  */
 
 :root{
-    --padding: 20px;
+    --padding: 30px;
 }
 
 @media screen and (max-width: 600px){
     :root{
-        --padding: 8px;
+        --padding: 20px;
     }
 }
 
@@ -115,11 +115,12 @@ button:disabled{
     background-color: white;
     border-radius: 20px 20px 0 0;
     margin: 0 10px 0 10px;
-    box-shadow: 0px 2px 6px -2px black;
+    box-shadow: 0px 11px 50px 0px #540000a1;
     visibility: hidden;
     transition: visibility 0s, opacity 0.5s linear, transform 0.5s ease;
     transform: translateY(50%);
     opacity: 0;
+    min-height: 300px;
 }
 .cart--open{
     visibility: visible;
