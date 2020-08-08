@@ -20,6 +20,12 @@ html {
   background-color: #F8E3E2;
   color: #000000;
   box-sizing: border-box;
+  font-family: 'Manrope', sans-serif  ;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', cursive;
+    margin: 0 0 var(--padding) 0;
 }
 
 body{
@@ -136,7 +142,7 @@ button:disabled{
 }
 .cart--open .cart__inner{
     visibility: visible;
-    transform: translateY(-200px);
+    transform: translateY(-300px);
     opacity: 1;
 }
 .cart--open .cart__overlay{
