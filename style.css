@@ -106,9 +106,20 @@ button:disabled{
 /*
  * Cart
  */
-.cart{
-    bottom: 0;
+.cart__overlay{
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+
+}
+.cart__inner{
+    left: 0;
+    top: 0;
     width: calc(100% - 20px);
     position: absolute;
     padding: var(--padding);
@@ -118,12 +129,17 @@ button:disabled{
     box-shadow: 0px 11px 50px 0px #540000a1;
     visibility: hidden;
     transition: visibility 0s, opacity 0.5s linear, transform 0.5s ease;
-    transform: translateY(50%);
+    transform: translateY(0%);
     opacity: 0;
     min-height: 300px;
+    margin-top: 100vh;
 }
-.cart--open{
+.cart--open .cart__inner{
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(-200px);
+    opacity: 1;
+}
+.cart--open .cart__overlay{
+    visibility: visible;
     opacity: 1;
 }

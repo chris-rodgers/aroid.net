@@ -20,7 +20,10 @@
     </header>
   </div>
   <button id="increment">+</button>
-  <div id="cart" class="cart">test</div>
+  <div id="cart" class="cart">
+    <div class="cart__overlay" id="cart-overlay"></div>
+    <div class="cart__inner">Test</div>
+  </div>
 </body>
 <script>
   // Add to cart button
@@ -31,9 +34,11 @@
   }
 
   // Open cart
-  document.getElementById('cart-button').onclick = function () {
+  function toggleCart() {
     document.getElementById('cart').classList.toggle("cart--open");
   }
+  document.getElementById('cart-button').onclick = toggleCart;
+  document.getElementById('cart-overlay').onclick = toggleCart;
 
   if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
