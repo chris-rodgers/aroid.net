@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+  <title>aroid.net</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>aroid.net</title>
   <meta name="theme-color" content="#F8E3E2" />
+  <meta name="robots" content="noindex, nofollow">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,12 +20,19 @@
     </header>
   </div>
   <button id="increment">+</button>
+  <div id="cart" class="cart">test</div>
 </body>
 <script>
+  // Add to cart button
   document.getElementById('increment').onclick = function () {
     var el = document.getElementById('cart-button');
     var count = el.getAttribute('data-count') || 0;
-    el.setAttribute('data-count', Number(count)+1);
+    el.setAttribute('data-count', Number(count) + 1);
+  }
+
+  // Open cart
+  document.getElementById('cart-button').onclick = function () {
+    document.getElementById('cart').classList.toggle("cart--open");
   }
 
   if ('serviceWorker' in navigator) {

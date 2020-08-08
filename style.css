@@ -2,13 +2,13 @@
  * Variables
  */
 
-html:root{
-    padding: 20px;
+:root{
+    --padding: 20px;
 }
 
 @media screen and (max-width: 600px){
-    html:root{
-        padding: 8px;
+    :root{
+        --padding: 8px;
     }
 }
 
@@ -19,6 +19,16 @@ html:root{
 html {
   background-color: #F8E3E2;
   color: #000000;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+
+}
+
+*{
+    box-sizing: inherit;
 }
 
 button {
@@ -65,11 +75,11 @@ button:disabled{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: var(--padding);
 }
 
 .header__logo{
     height: 50px;
-    padding: var(padding);
 }
 
 .header__button{
@@ -91,4 +101,28 @@ button:disabled{
     justify-content: center;
     background-color: #DBABA8;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * Cart
+ */
+.cart{
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    position: absolute;
+    padding: var(--padding);
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    margin: 0 10px 0 10px;
+    box-shadow: 0px 2px 6px -2px black;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear, transform 0.5s ease;
+    transform: translateY(50%);
+    opacity: 0;
+}
+.cart--open{
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
 }
