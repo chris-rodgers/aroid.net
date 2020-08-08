@@ -191,13 +191,6 @@ button:disabled{
     flex: 1;
     flex-shrink: 0;
 }
-.cart--open{
-    visibility: visible;
-    opacity: 1;
-}
-.cart--open .cart__inner{
-    transform: unset;
-}
 .cart__footer{
     width: 95%;
     left: 2.5%;
@@ -205,4 +198,11 @@ button:disabled{
     padding: var(--padding);
     bottom: 0;
     background-color: white;
+}
+.cart--open{
+    visibility: visible;
+    opacity: 1;
+}
+.cart--open .cart__inner{
+    transform: unset;
 }
