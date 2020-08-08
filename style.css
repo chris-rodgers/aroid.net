@@ -9,6 +9,7 @@
 @media screen and (max-width: 600px){
     :root{
         --padding: 20px;
+        --border-radius: 8px;
     }
 }
 
@@ -94,6 +95,25 @@ button:disabled{
 }
 
 /*
+ * Button
+ */
+.button{
+    width: 100%;
+    height: 40px;
+    padding: var(--padding);
+    background-color: fuchsia;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+.button--large{
+    height: 60px;
+}
+
+/*
  * Header
  */
 
@@ -140,33 +160,37 @@ button:disabled{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
     visibility: hidden;
-    transition: visibility 0s, opacity 0.25s;
+    transition: opacity 0.25s;
     opacity: 0;
 
 }
 .cart__inner{
-    left: 0;
-    top: 0;
-    width: calc(100% - 20px);
-    position: absolute;
+    width: 90%;
     padding: var(--padding);
     background-color: white;
     border-radius: 20px 20px 0 0;
-    margin: 0 10px 0 10px;
+    margin: 0 auto;
     box-shadow: 0px 11px 50px 0px #540000a1;
     visibility: hidden;
-    transition: visibility 0s, opacity 0.25s linear, transform 0.25s ease;
-    transform: translateY(0%);
+    transition: opacity 0.25s linear, margin-top 0.25s ease;
     opacity: 0;
     min-height: 300px;
-    margin-top: 100vh;
+    margin-top: calc(90vh - 100px);
+    position: relative;
 }
 .cart--open .cart__inner{
     visibility: visible;
-    transform: translateY(-300px);
     opacity: 1;
+    margin-top: calc(90vh - 300px);
 }
 .cart--open .cart__overlay{
     visibility: visible;
     opacity: 1;
+}
+.cart__footer{
+    width: 90%;
+    left: 5%;
+    bottom: 0;
+    position: fixed;
+    padding: var(--padding);
 }
